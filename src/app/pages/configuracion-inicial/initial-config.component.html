@@ -1,0 +1,54 @@
+<div class="page">
+  <img src="assets/patron-puntos.png" class="page__pattern" alt="" />
+  <app-navbar variant="guest" />
+
+  <main class="content">
+    <div class="content__image">
+      <img src="assets/logo.png" alt="WordUp mascot" />
+    </div>
+
+    <div class="content__form">
+      <h1 class="display form__title">Configuración Inicial</h1>
+      <div style="height: 10px"></div>
+
+      <mat-form-field appearance="outline" class="form__field" floatLabel="always">
+        <mat-label>Idioma a aprender</mat-label>
+        <mat-select class="label-small" placeholder="Selecciona el idioma">
+          <mat-option value="ingles">Inglés</mat-option>
+          <mat-option value="frances">Francés</mat-option>
+          <mat-option value="italiano">Italiano</mat-option>
+          <mat-option value="aleman">Alemán</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form__field" floatLabel="always">
+        <mat-label>Nivel</mat-label>
+        <mat-select class="label-small" placeholder="Selecciona el nivel">
+          <mat-option value="a1">Principiante (A1)</mat-option>
+          <mat-option value="a2">Básico (A2)</mat-option>
+          <mat-option value="b1">Intermedio (B1)</mat-option>
+          <mat-option value="b2">Intermedio alto (B2)</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form__field" floatLabel="always">
+        <mat-label>Define Objetivo</mat-label>
+        <mat-select class="label-small" placeholder="Selecciona un objetivo">
+          <mat-option value="conversacion">Conversación</mat-option>
+          <mat-option value="pronunciacion">Mejorar pronunciación</mat-option>
+          <mat-option value="vocabulario">Vocabulario</mat-option>
+          <mat-option value="trabajo">Trabajo</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form__field" floatLabel="always">
+        <mat-label>Racha objetivo</mat-label>
+        <input matInput class="label-small" placeholder="Escribe la racha que desea alcanzar" type="number" min="1"/>
+      </mat-form-field>
+
+      <button mat-flat-button class="btn-primary label-large" routerLink="/home">
+        Continuar
+      </button>
+    </div>
+  </main>
+</div>

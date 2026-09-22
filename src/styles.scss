@@ -30,3 +30,26 @@ html {
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
+.mat-mdc-option.mdc-list-item--selected {
+  background-color: var(--color-soft) !important;
+  border-radius: 12px !important;
+
+  .mdc-list-item__primary-text {
+    color: var(--color-black) !important;
+  }
+}
+
+.mat-mdc-option {
+  flex-direction: row-reverse !important;
+  
+  .mat-pseudo-checkbox {
+    margin-right: 4px !important;
+    margin-left: 8px !important;
+  }
+}
+
+.mat-mdc-select-panel {
+  background-color: var(--color-soft) !important;
+  border-radius: 12px !important;
+}
