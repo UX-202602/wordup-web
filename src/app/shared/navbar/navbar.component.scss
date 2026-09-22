@@ -39,6 +39,10 @@
   gap: 20px;
 }
 
+.navbar__logo {
+  cursor: pointer;
+}
+
 .btn-login {
   background-color: var(--color-secondary) !important;
   color: var(--color-white) !important;

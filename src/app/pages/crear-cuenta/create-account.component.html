@@ -1,0 +1,33 @@
+<div class="page">
+    <img src="assets/patron-puntos.png" class="page__pattern" alt="" />
+    <app-navbar variant="guest" />
+
+    <main class="content">
+        <div class="content__image">
+            <img src="assets/logo.png" alt="WordUp mascot" />
+        </div>
+
+        <div class="content__form">
+            <h1 class="display form__title">Crear Cuenta</h1>
+            <div style="height: 40px"></div>
+            <mat-form-field appearance="outline" class="form__field" floatLabel="always">
+                <mat-label>Email</mat-label>
+                <input matInput class="label-small" placeholder="ejemplo@gmail.com" type="email" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form__field" floatLabel="always">
+                <mat-label>Usuario</mat-label>
+                <input matInput class="label-small" placeholder="Tu nombre de usuario" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form__field" floatLabel="always">
+                <mat-label>Contraseña</mat-label>
+                <input matInput class="label-small" placeholder="Ingresa tu contraseña" type="password" />
+            </mat-form-field>
+
+            <button mat-flat-button class="btn-primary label-large" routerLink="/home">
+                Continuar
+            </button>
+        </div>
+    </main>
+</div>
