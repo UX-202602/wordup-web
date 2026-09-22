@@ -1,0 +1,23 @@
+<mat-toolbar class="navbar">
+  <span class="display">WORDUP</span>
+
+  <span class="spacer"></span>
+
+  @if (variant === 'guest') {
+    <div class="navbar__actions">
+      <button mat-flat-button class="btn-login label-large">Iniciar Sesión</button>
+      <button mat-stroked-button class="btn-register label-large">Crear Cuenta</button>
+    </div>
+  }
+
+  @if (variant === 'auth') {
+    <nav class="navbar__links">
+      <a [class.active]="activeLink === 'alarmas'">Alarmas</a>
+      <a [class.active]="activeLink === 'palabras'">Palabras</a>
+      <a [class.active]="activeLink === 'perfil'">Perfil</a>
+    </nav>
+    <button mat-mini-fab class="btn-logout">
+      <mat-icon>logout</mat-icon>
+    </button>
+  }
+</mat-toolbar>
