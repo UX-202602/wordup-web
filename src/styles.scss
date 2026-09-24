@@ -53,3 +53,16 @@ body {
   background-color: var(--color-soft) !important;
   border-radius: 12px !important;
 }
+
+.mat-calendar-body-label {
+  visibility: hidden !important;
+  height: 0 !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+}
+
+.active-day .mat-calendar-body-cell-content {
+  background-color: var(--color-highlight) !important;
+  color: var(--color-white) !important;
+  border-radius: 50% !important;
+}

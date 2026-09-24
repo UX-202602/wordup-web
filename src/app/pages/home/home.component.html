@@ -1,0 +1,67 @@
+<div class="page">
+    <app-navbar variant="auth" />
+
+    <main class="content">
+
+        <!-- Columna izquierda -->
+        <div class="left">
+            <h1 class="display left__title">Inglés</h1>
+            <div style="height: 10px"></div>
+            <p class="title-large">
+                <span class="headline-large">Nivel:</span> {{ nivel }}
+            </p>
+            <p class="title-large">
+                <span class="headline-large">Palabras Aprendidas:</span> {{ palabrasAprendidas }} Palabras
+            </p>
+            <div style="height: 20px"></div>
+
+            <button mat-flat-button class="btn-primary title-large" routerLink="/palabras">
+                Repasar palabras
+            </button>
+
+            <mat-card class="info-card">
+                <p class="title-large">Palabras Nuevas:</p>
+                <p class="headline-large">{{ palabrasNuevas }}</p>
+                <p class="title-large">Palabras aprendidas este mes:</p>
+                <p class="headline-large">{{ palabrasEsteMes }}</p>
+            </mat-card>
+
+            <mat-card class="info-card alarm-card">
+                <p class="title-large">Próxima Alarma</p>
+                <p class="headline-large">{{ proximaAlarma }}</p>
+            </mat-card>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="right">
+            <div class="right__objetivo">
+                <button mat-flat-button class="btn-primary btn-size title-large" routerLink="/configuracion-inicial">
+                    Editar Objetivo
+                </button>
+
+                <p class="headline-large right__objetivo-label">Objetivo Actual:</p>
+                <p class="title-large">{{ objetivo }}</p>
+            </div>
+
+            <div style="height: 10px"></div>
+
+            <mat-card class="calendar-card">
+                <p class="headline-large calendar-card__title">Historial de Alarmas</p>
+
+                <mat-divider></mat-divider>
+
+                <mat-calendar [dateClass]="dateClass"></mat-calendar>
+
+                <mat-divider></mat-divider>
+
+                <div class="calendar-card__stats">
+                    <p class="body-large">Alarmas Atendidas</p>
+                    <p class="body-large" style="color: var(--color-secondary)">{{ alarmasAtendidas }}</p>
+                    <p class="body-large">Alarmas Pospuestas</p>
+                    <p class="body-large" style="color: var(--color-error)">{{ alarmasPospuestas }}</p>
+                </div>
+            </mat-card>
+        </div>
+
+    </main>
+</div>
