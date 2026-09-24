@@ -5,8 +5,11 @@
 
 .content {
   display: flex;
+  justify-content: center;
   gap: 60px;
-  padding: 40px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
 }
 
 .left {
@@ -14,7 +17,7 @@
   flex-direction: column;
   gap: 20px;
   flex: 1;
-  padding-left: 80px;
+  max-width: 579px;
 
   &__title {
     color: var(--color-primary);
@@ -26,7 +29,6 @@
   flex-direction: column;
   gap: 16px;
   width: 410px;
-  margin-right: 50px;
 
   &__objetivo-label {
     color: var(--color-primary);
@@ -56,12 +58,12 @@
 
 .info-card {
   background-color: var(--color-soft) !important;
-  padding: 16px;
+  padding: 28px 24px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  width: 579px;
+  gap: 16px;
+  width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25) !important;
 }
 
@@ -71,6 +73,7 @@
   border-left: 7px solid var(--color-secondary) !important;
   border-radius: 12px !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25) !important;
+  padding: 24px 28px;
 }
 
 .calendar {

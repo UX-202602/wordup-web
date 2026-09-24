@@ -1,0 +1,36 @@
+<div class="page">
+  <app-navbar variant="auth" activeLink="palabras" />
+
+  <main class="content">
+    <div class="header">
+      <h1 class="display header__title">Práctica</h1>
+      <button class="display header__back" routerLink="/palabras">Volver a palabras</button>
+    </div>
+
+    <div class="practice">
+      <button class="flashcard" [class.flashcard--back]="flipped" (click)="flip()"
+        [attr.aria-label]="flipped ? 'Ver palabra' : 'Ver significado'">
+        @if (!flipped) {
+        <span class="title-large">{{ current.word }}</span>
+        } @else {
+        <div class="flashcard__meaning">
+          <p class="title-large">Significado/Meaning:</p>
+          <p class="body-large">{{ current.meaningEs }}</p>
+          <p class="body-large">{{ current.meaningEn }}</p>
+        </div>
+        }
+      </button>
+
+      <div class="actions">
+        @if (hasPrevious) {
+        <button class="btn btn--previous title-large" (click)="previous()">Anterior</button>
+        } @else {
+        <span></span>
+        }
+        @if (hasNext) {
+        <button class="btn btn--next title-large" (click)="next()">Siguiente</button>
+        }
+      </div>
+    </div>
+  </main>
+</div>

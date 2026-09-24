@@ -1,0 +1,31 @@
+<div class="page">
+  <app-navbar variant="auth" activeLink="palabras" />
+
+  <main class="content">
+    <!-- Columna izquierda -->
+    <div class="left">
+      <h1 class="display header__title">Palabras</h1>
+
+      <div class="words-list">
+        @for (word of words; track word.word) {
+        <button class="word-item title-large" [class.word-item--active]="word === selected" (click)="select(word)">
+          {{ word.word }}
+        </button>
+        }
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Columna derecha -->
+    <div class="right">
+      <button mat-flat-button class="btn-primary title-large" routerLink="/practica">
+        Practicar
+      </button>
+
+      @if (selected) {
+      <app-word-detail [word]="selected" (closed)="selected = null" />
+      }
+    </div>
+  </main>
+</div>
