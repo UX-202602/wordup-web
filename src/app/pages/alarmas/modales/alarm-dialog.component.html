@@ -1,0 +1,56 @@
+<div class="dialog">
+  <p class="title-large dialog__subtitle">Días:</p>
+
+  <div class="days">
+    @for (day of days; track day; let i = $index) {
+    <div class="days__item">
+      <span class="label-medium">{{ day }}</span>
+      <div class="days__radio" [class.selected]="selectedDays[i]" (click)="selectedDays[i] = !selectedDays[i]">
+        @if (selectedDays[i]) {
+        <div class="days__radio-inner"></div>
+        }
+      </div>
+    </div>
+    }
+  </div>
+
+  <p class="title-large dialog__subtitle">Rango de Horas:</p>
+  <div class="time-range">
+    <div class="time-field">
+      <label class="label-small">Inicio</label>
+      <div class="time-field__input" (click)="openTimePicker(true)">
+        <span class="body-large">{{ startTime }}</span>
+        <mat-icon class="time-field__icon">star</mat-icon>
+      </div>
+    </div>
+    <div class="time-field">
+      <label class="label-small">Fin</label>
+      <div class="time-field__input" (click)="openTimePicker(false)">
+        <span class="body-large">{{ endTime }}</span>
+        <mat-icon class="time-field__icon">star</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="counter">
+    <p class="title-large dialog__subtitle">Cantidad de alarmas:</p>
+    <div class="counter__controls">
+      <button mat-icon-button (click)="increment()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <span class="title-large">{{ count }}</span>
+      <button mat-icon-button (click)="decrement()">
+        <mat-icon>remove</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="dialog__actions">
+    <button mat-flat-button class="btn-cancel label-large" (click)="cancel()">
+      <mat-icon>close</mat-icon> Cancelar
+    </button>
+    <button mat-flat-button class="btn-confirm label-large" (click)="confirm()">
+      <mat-icon>check</mat-icon> {{ isEdit ? 'Guardar' : 'Crear' }}
+    </button>
+  </div>
+</div>

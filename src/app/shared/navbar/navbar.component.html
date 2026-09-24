@@ -1,5 +1,6 @@
 <mat-toolbar class="navbar">
-  <span class="display navbar__logo" routerLink="/welcome">WORDUP</span>
+  <span class="display navbar__logo" 
+    [routerLink]="variant === 'auth' ? '/home' : '/welcome'">WORDUP</span>
 
   <span class="spacer"></span>
 
@@ -12,11 +13,11 @@
 
   @if (variant === 'auth') {
   <nav class="navbar__links">
-    <a [class.active]="activeLink === 'alarmas'">Alarmas</a>
-    <a [class.active]="activeLink === 'palabras'">Palabras</a>
-    <a [class.active]="activeLink === 'perfil'">Perfil</a>
+    <a [class.active]="activeLink === 'alarmas'" routerLink="/alarmas">Alarmas</a>
+    <a [class.active]="activeLink === 'palabras'" routerLink="/palabras">Palabras</a>
+    <a [class.active]="activeLink === 'perfil'" routerLink="/perfil">Perfil</a>
   </nav>
-  <button mat-mini-fab class="btn-logout">
+  <button mat-mini-fab class="btn-logout" routerLink="/welcome">
     <mat-icon>logout</mat-icon>
   </button>
   }

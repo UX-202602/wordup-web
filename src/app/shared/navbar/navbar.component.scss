@@ -13,7 +13,7 @@
 
   &__links {
     display: flex;
-    gap: 24px;
+    gap: 40px;
     align-items: center;
 
     a {
@@ -61,5 +61,5 @@
 .btn-logout {
   background-color: var(--color-highlight) !important;
   color: var(--color-white) !important;
-  margin-left: 16px;
+  margin-left: 40px;
 }

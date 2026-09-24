@@ -1,0 +1,128 @@
+.page {
+    min-height: 100vh;
+    background-color: var(--color-white);
+}
+
+.content {
+  padding: 40px 60px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.left {
+  flex: 1;
+}
+
+
+.right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header__title {
+  color: var(--color-primary);
+  margin-bottom: 32px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+
+    &__title {
+        color: var(--color-primary);
+    }
+}
+
+.btn-primary {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-white) !important;
+    border-radius: 28px !important;
+    padding: 20px 24px !important;
+    width: 356px;
+    height: 96px;
+    margin-left: auto;
+    margin-right: 80px;
+    display: block !important;
+}
+
+.alarms-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
+    margin-left: 20px;
+}
+
+.alarm-card {
+    background-color: var(--color-primary) !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    width: 519px;
+    height: 157px;
+    padding: 16px;
+    justify-content: center;
+
+    transition: background-color 0.3s;
+
+    &.disabled {
+        background-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-white)) !important;
+    }
+
+    ::ng-deep .mdc-switch:enabled .mdc-switch__track::after {
+        background-color: var(--color-secondary) !important;
+    }
+
+    ::ng-deep .mdc-switch:enabled .mdc-switch__track::before {
+        background-color: rgba(255, 255, 255, 0.3) !important;
+    }
+
+    ::ng-deep .mdc-switch .mdc-switch__handle::after {
+        background-color: var(--color-white) !important;
+    }
+
+    ::ng-deep .mdc-switch__icons {
+        display: none !important;
+    }
+
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__day {
+        padding: 0px 10px;
+        color: var(--color-white);
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    &__label {
+        padding: 0px 10px;
+        color: var(--color-white);
+        margin-top: 8px;
+    }
+
+    &__schedule {
+        padding: 0px 10px;
+        color: var(--color-white);
+        margin-top: 4px;
+    }
+}
+
+.icon-edit {
+    color: var(--color-secondary) !important;
+}
+
+.icon-delete {
+    color: var(--color-secondary) !important;
+}

@@ -1,0 +1,42 @@
+<div class="page">
+  <app-navbar variant="auth" activeLink="alarmas" />
+
+  <main class="content">
+    <!-- Columna izquierda -->
+    <div class="left">
+      <h1 class="display header__title">Lista de Alarmas</h1>
+
+      <div class="alarms-list">
+        @for (alarm of alarms; track alarm; let i = $index) {
+        <mat-card class="alarm-card" [class.disabled]="!alarm.enabled">
+          <div class="alarm-card__header">
+            <span class="headline-large alarm-card__day">{{ alarm.day }}</span>
+            <div class="alarm-card__actions">
+              <mat-slide-toggle [(ngModel)]="alarm.enabled" />
+              <button mat-icon-button (click)="openEdit(i)">
+                <mat-icon class="icon-edit">edit</mat-icon>
+              </button>
+              <button mat-icon-button (click)="openDelete(i)">
+                <mat-icon class="icon-delete">delete_outline</mat-icon>
+              </button>
+            </div>
+          </div>
+          <p class="title-large alarm-card__label">Horario:</p>
+          <p class="body-large alarm-card__schedule">{{ alarm.schedule }}</p>
+        </mat-card>
+        }
+      </div>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="right">
+      <button mat-flat-button class="btn-primary title-large" (click)="openCreate()">
+        Agregar / Crear Alarma
+      </button>
+
+      @if (showForm) {
+      <app-alarm-dialog [isInline]="true" [isEdit]="isEdit" [alarm]="alarms[selectedIndex]" (onClose)="closeForm()" />
+      }
+    </div>
+  </main>
+</div>

@@ -66,3 +66,14 @@ body {
   color: var(--color-white) !important;
   border-radius: 50% !important;
 }
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 12px !important;
+}
+
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 12px !important;
+}
