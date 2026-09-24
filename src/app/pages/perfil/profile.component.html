@@ -1,0 +1,45 @@
+<div class="page">
+  <app-navbar variant="auth" activeLink="perfil" />
+
+  <main class="content">
+    <div class="grid">
+      <!-- Datos -->
+      <div class="fields">
+        <label class="field">
+          <span class="title-large">Usuario:</span>
+          <input class="field__input title-large" [(ngModel)]="usuario" [readOnly]="!editing" />
+        </label>
+        <label class="field">
+          <span class="title-large">Nombre:</span>
+          <input class="field__input title-large" [(ngModel)]="nombre" [readOnly]="!editing" />
+        </label>
+        <label class="field">
+          <span class="title-large">Email:</span>
+          <input class="field__input title-large" type="email" [(ngModel)]="email" [readOnly]="!editing" />
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Foto -->
+      <div class="photo">
+        <h2 class="headline-large photo__title">Foto de perfil</h2>
+        <label class="photo__box" [style.background-image]="photo ? 'url(' + photo + ')' : null">
+          <mat-icon class="photo__icon">edit</mat-icon>
+          <input type="file" accept="image/*" hidden (change)="onPhotoSelected($event)" />
+        </label>
+      </div>
+
+      <button mat-flat-button class="btn-primary btn-primary--left title-large" (click)="toggleEdit()">
+        {{ editing ? 'Guardar datos' : 'Actualizar datos' }}
+      </button>
+      <button mat-flat-button class="btn-primary btn-primary--right title-large" (click)="changePassword()">
+        Cambiar contraseña
+      </button>
+    </div>
+
+    @if (message) {
+    <p class="label-large message">{{ message }}</p>
+    }
+  </main>
+</div>
